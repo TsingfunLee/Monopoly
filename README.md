@@ -4,4 +4,5 @@
 简略的大富翁游戏demo.
 <br>
 答应我不要吐槽UI。
-https://tsingfunlee.github.com/Monopoly
+<br>
+https://tsingfunlee.github.io/Monopoly
