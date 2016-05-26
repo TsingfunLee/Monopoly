@@ -1,0 +1,57 @@
+body,p{
+    margin: 0px;
+    padding: 0px;
+}
+.wrap{
+    width: 720px;
+    height: 1210px;
+    position: relative;
+    margin: 70px auto 0px auto;
+}
+.count{
+    background: url("../img/count.png") no-repeat;
+    width: 188px;
+    height: 81px;
+    position: absolute;
+    left: 60px;
+}
+.count p{
+    font-family: "Microsoft YaHei UI";
+    font-size: 32px;
+    height: 44px;
+    position: relative;
+    margin-left: 20px;
+    top: 50%;
+    margin-top: -22px;
+}
+.start input{
+    background: url("../img/start.png") no-repeat;
+    border: none;
+    width: 188px;
+    height: 81px;
+    position: absolute;
+    right: 60px;
+}
+.game{
+    background: url("../img/game.png") no-repeat;
+    width: 720px;
+    height: 1096px;
+    position: relative;
+    top: 130px;
+}
+#role{
+    background: url("../img/role.png") no-repeat;
+    width: 88px;
+    height: 88px;
+    position: absolute;
+    left: 78px;
+    top: 32px;
+}
+#dice{
+    /*background: url("../img/dice/dice_1.png");*/
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0px auto 0px auto;
+    top: 430px;
+}
