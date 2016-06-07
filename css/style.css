@@ -1,57 +1,158 @@
-body,p{
+/* 全局设置*/
+body {
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
 }
-.wrap{
-    width: 720px;
-    height: 1210px;
+
+/* 在电脑上缩小50%*/
+@media (min-device-width: 1024px) {
+    body {
+        -webkit-transform-origin: top;
+        -moz-transform-origin: top;
+        -ms-transform-origin: top;
+        -o-transform-origin: top;
+        transform-origin: top;
+        -webkit-transform: scale(0.5, 0.5);
+        -moz-transform: scale(0.5, 0.5);
+        -ms-transform: scale(0.5, 0.5);
+        -o-transform: scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
+    }
+
+    .wrap {
+        margin-top: 50px;
+    }
+}
+
+/* 全局设置*/
+
+.wrap {
+    width: 740px;
+    height: 1136px;
     position: relative;
-    margin: 70px auto 0px auto;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../img/background.jpg") no-repeat;
 }
-.count{
+
+/* 顶部 */
+.top {
+    padding-top: 40px;
+}
+
+.count {
     background: url("../img/count.png") no-repeat;
-    width: 188px;
-    height: 81px;
+    width: 300px;
+    height: 150px;
     position: absolute;
-    left: 60px;
+    left: 50px;
 }
-.count p{
-    font-family: "Microsoft YaHei UI";
-    font-size: 32px;
-    height: 44px;
-    position: relative;
-    margin-left: 20px;
-    top: 50%;
-    margin-top: -22px;
+
+.number {
+    position: absolute;
+    left: 50px;
+    top: 50px;
 }
-.start input{
-    background: url("../img/start.png") no-repeat;
+
+#start-button {
     border: none;
-    width: 188px;
-    height: 81px;
+    width: 300px;
+    height: 150px;
     position: absolute;
-    right: 60px;
+    right: 50px;
 }
-.game{
-    background: url("../img/game.png") no-repeat;
-    width: 720px;
-    height: 1096px;
+
+/* 按钮可用时*/
+.able {
+    background: url("../img/start.png") no-repeat;
+}
+
+/* 按钮不可用时*/
+.disable {
+    background: url("../img/start-disable.png") no-repeat;
+}
+
+/* 顶部 */
+
+/* 游戏*/
+.game {
+    background: url("../img/board.png") no-repeat;
+    width: 740px;
+    height: 660px;
     position: relative;
-    top: 130px;
+    top: 250px;
 }
-#role{
-    background: url("../img/role.png") no-repeat;
-    width: 88px;
-    height: 88px;
+
+#role {
+    width: 120px;
+    height: 120px;
     position: absolute;
-    left: 78px;
-    top: 32px;
+    left: 100px;
+    top: -120px;
 }
-#dice{
-    /*background: url("../img/dice/dice_1.png");*/
+
+#dice {
     width: 100px;
     height: 100px;
     position: relative;
     margin: 0px auto 0px auto;
-    top: 430px;
+    top: 275px;
+    display: block;
 }
+
+/* role's animation*/
+.zoom {
+    animation: zooming 1s;
+}
+
+@keyframes zooming {
+    0% {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+/* 游戏*/
+
+/* game message*/
+#game-message {
+    position: absolute;
+    top: 0px;
+}
+
+.win {
+    background: url("../img/win.png");
+    width: 740px;
+    height: 1136px;
+}
+
+.lose {
+    background: url("../img/lose.png");
+    width: 740px;
+    height: 1136px;
+}
+
+.over {
+    background: url("../img/over.png");
+    width: 740px;
+    height: 1136px;
+}
+
+.close {
+    position: absolute;
+    top: 270px;
+    right: 160px;
+}
+
+/* game message*/
