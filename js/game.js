@@ -44,7 +44,7 @@ function castDice() {
         if (index >= 3) {
             index = 0;
         }
-    },16);
+    }, 16);
 
     // 获得骰子点数，停止动画
     setTimeout(function () {
@@ -123,8 +123,8 @@ function leftCount() {
     numOfTimes--;
     count.setAttribute('src', 'img/number/' + numOfTimes + '.png');
     if (numOfTimes <= 0) {
-        gameMessage.setAttribute('class', 'over');
-        closeButton.setAttribute('src', 'img/close.png');
+        gameMessage.className='over';
+        closeButton.className='close';
         addEventHandler(closeButton, 'click', closePopWindow);
         disStartButton();
     }
@@ -139,13 +139,13 @@ function triggerEvent(role, x, y) {
         var rand = Math.random();
         if (rand <= 0.5) {
             // 中奖
-            gameMessage.setAttribute('class', 'win');
-            closeButton.setAttribute('src', 'img/close.png');
+            gameMessage.className = 'win';
+            closeButton.className = 'close';
             addEventHandler(closeButton, 'click', closePopWindow);
         } else {
             // 谢谢参与
-            gameMessage.setAttribute('class', 'lose');
-            closeButton.setAttribute('src', 'img/close.png');
+            gameMessage.className = 'lose';
+            closeButton.className = 'close';
             addEventHandler(closeButton, 'click', closePopWindow);
         }
     }
@@ -192,18 +192,18 @@ function triggerEvent(role, x, y) {
 // 投骰子按钮可用
 function startButtonAble() {
     addEventHandler(startButton, "click", castDice);
-    startButton.className = 'able'
+    startButton.className = 'able';
 }
 // 投骰子按钮不可用
 function disStartButton() {
     removeEventHandler(startButton, "click", castDice);
-    startButton.className = 'disable'
+    startButton.className = 'disable';
 }
 
 // 弹窗关闭
 function closePopWindow() {
-    gameMessage.setAttribute('class', '');
-    closeButton.src = ''
+    gameMessage.className = '';
+    closeButton.className = '';
 }
 
 /**

@@ -150,6 +150,9 @@ body {
 }
 
 .close {
+    background: url("../img/close.png");
+    width: 70px;
+    height: 70px;
     position: absolute;
     top: 270px;
     right: 160px;
