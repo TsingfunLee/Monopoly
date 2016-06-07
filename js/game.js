@@ -44,7 +44,7 @@ function castDice() {
         if (index >= 3) {
             index = 0;
         }
-    }, 41);
+    },16);
 
     // 获得骰子点数，停止动画
     setTimeout(function () {
