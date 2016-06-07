@@ -69,7 +69,6 @@ function roleMove(i, direction, isCount) {
     var isCount = isCount;     // 是否要减掉次数
 
     var id = setInterval(function () {
-
         if (direction === 'forward') {
             if (y < 10) {
                 y += 130;
@@ -107,12 +106,11 @@ function roleMove(i, direction, isCount) {
 
         if (total === i) {
             clearInterval(id);
-            // 重新绑定投骰子函数
-            startButtonAble();
             if (isCount) {
                 leftCount();
             }
             triggerEvent(role, x, y);
+            startButtonAble();
             return;
         }
     }, 500);
@@ -123,8 +121,8 @@ function leftCount() {
     numOfTimes--;
     count.setAttribute('src', 'img/number/' + numOfTimes + '.png');
     if (numOfTimes <= 0) {
-        gameMessage.className='over';
-        closeButton.className='close';
+        gameMessage.className = 'over';
+        closeButton.className = 'close';
         addEventHandler(closeButton, 'click', closePopWindow);
         disStartButton();
     }
@@ -161,7 +159,7 @@ function triggerEvent(role, x, y) {
     }
 
     // 后退3步
-    if (x === 520 && y === 10 ||
+    else if (x === 520 && y === 10 ||
         x === 100 && y === 142) {
         role.className = 'zoom';
         setTimeout(function () {
@@ -171,7 +169,7 @@ function triggerEvent(role, x, y) {
     }
 
     // 前进1步
-    if (x === 520 && y === 406) {
+    else if (x === 520 && y === 406) {
         role.className = 'zoom';
         setTimeout(function () {
             roleMove(1, 'forward', false);
@@ -180,7 +178,7 @@ function triggerEvent(role, x, y) {
     }
 
     // 后退1步
-    if (x === 240 && y === 538) {
+    else if (x === 240 && y === 538) {
         role.className = 'zoom';
         setTimeout(function () {
             roleMove(1, 'back', false);
