@@ -53,7 +53,7 @@ function castDice() {
         // 主角移动
         role.className = 'zoom';
         setTimeout(function () {
-            roleMove(i, 'forward', true);
+            roleMove(i, 'forward');
             role.className = '';
         }, 1500);
     }, 1000);
@@ -62,11 +62,10 @@ function castDice() {
 // 主角移动
 var x = 100,   // 主角的位置
     y = -120;
-function roleMove(i, direction, isCount) {
+function roleMove(i, direction) {
     var role = document.getElementById("role");
     var total = 0;     // 所走的格子数
     var direction = direction;     // 移动方向
-    var isCount = isCount;     // 是否要减掉次数
 
     var id = setInterval(function () {
         if (direction === 'forward') {
@@ -106,12 +105,7 @@ function roleMove(i, direction, isCount) {
 
         if (total === i) {
             clearInterval(id);
-            if (isCount) {
-                leftCount();
-            }
             triggerEvent(role, x, y);
-            startButtonAble();
-            return;
         }
     }, 500);
 }
@@ -153,7 +147,7 @@ function triggerEvent(role, x, y) {
         x === 100 && y === 406) {
         role.className = 'zoom';
         setTimeout(function () {
-            roleMove(3, 'forward', false);
+            roleMove(3, 'forward');
             role.className = '';
         }, 1500)
     }
@@ -163,7 +157,7 @@ function triggerEvent(role, x, y) {
         x === 100 && y === 142) {
         role.className = 'zoom';
         setTimeout(function () {
-            roleMove(3, 'back', false);
+            roleMove(3, 'back');
             role.className = '';
         }, 1500)
     }
@@ -172,7 +166,7 @@ function triggerEvent(role, x, y) {
     else if (x === 520 && y === 406) {
         role.className = 'zoom';
         setTimeout(function () {
-            roleMove(1, 'forward', false);
+            roleMove(1, 'forward');
             role.className = '';
         }, 1500)
     }
@@ -181,9 +175,12 @@ function triggerEvent(role, x, y) {
     else if (x === 240 && y === 538) {
         role.className = 'zoom';
         setTimeout(function () {
-            roleMove(1, 'back', false);
+            roleMove(1, 'back');
             role.className = '';
         }, 1500)
+    }else {
+        startButtonAble();
+        leftCount();
     }
 }
 
